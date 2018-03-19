@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import search from '../services/search';
+import PropTypes from 'prop-types';
 
 class Search extends React.Component {
   constructor(props){
@@ -27,7 +28,7 @@ class Search extends React.Component {
 
     search(this.state.query)
       .then(results => {
-        debugger;
+        
         this.setState({
           results: results.items
         });
@@ -49,6 +50,10 @@ class Search extends React.Component {
       </div>
     );
   }
+}
+
+Search.propTypes = {
+  playVideo: PropTypes.func
 };
 
 export default Search;

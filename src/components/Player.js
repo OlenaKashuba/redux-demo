@@ -43,6 +43,10 @@ class Player extends React.Component {
       </div>
     );
   }
+}
+
+Player.propTypes = {
+  videoId: PropTypes.string
 };
 
 export default Player;

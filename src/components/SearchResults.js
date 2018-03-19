@@ -1,22 +1,27 @@
 import React from 'react';
 import SearchResult from './SearchResult';
+import PropTypes from 'prop-types';
 
-class SearchResults extends React.Component {
-  render(){
-    return (
-      <div>
-        <ul className="results-list">
-          {this.props.results.map( result => {
-            return <SearchResult
-              playVideo={this.props.playVideo}
-              result={result}
-              key={result.id.videoId}
-            />;
-          })}
-        </ul>
-      </div>
-    );
-  }
-}
+const SearchResults = ({playVideo, videoId, results}) => {
+  return (
+    <div>
+      <ul className="results-list">
+        {results.map( result => {
+          return <SearchResult
+            playVideo={playVideo}
+            result={result}
+            key={result.id.videoId}
+          />;
+        })}
+      </ul>
+    </div>
+  );
+};
+
+SearchResults.propTypes = {
+  playVideo: PropTypes.func,
+  videoId: PropTypes.number,
+  results: PropTypes.array
+};
 
 export default SearchResults;
