@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({handleSubmit, handleChange}) => {
+const SearchBar = ({query, updateQuery, searchRequest}) => {
   return (
     <form
       className="d-flex justify-content-center"
-      onSubmit={handleSubmit}
+      onSubmit={event => {
+        event.preventDefault();
+        searchRequest(query);
+      }}
     >
       <input
         type="text"
         name="query"
         placeholder="Search..."
-        onChange={handleChange}
+        onChange={event => updateQuery(event.target.value)}
+        value={query}
       />
       <button type="submit">Search</button>
     </form>
@@ -19,8 +23,9 @@ const SearchBar = ({handleSubmit, handleChange}) => {
 };
 
 SearchBar.propTypes = {
-  handleSubmit: PropTypes.func,
-  handleChange: PropTypes.func
+  query: PropTypes.string,
+  updateQuery: PropTypes.func,
+  searchRequest: PropTypes.func
 };
 
 export default SearchBar;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchResult = ({result, playVideo}) =>{
+const SearchResult = ({result, playVideo}) => {
   const { snippet } = result;
   const { videoId } = result.id;
   const { description, title } = snippet;
