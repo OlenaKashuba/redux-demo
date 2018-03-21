@@ -2,7 +2,7 @@ import React from 'react';
 import SearchResult from './SearchResult';
 import PropTypes from 'prop-types';
 
-const SearchResults = ({results, playVideo}) => {
+const SearchResults = ({results, playVideo, addToFav}) => {
   return (
     <div>
       <ul className="results-list">
@@ -11,6 +11,7 @@ const SearchResults = ({results, playVideo}) => {
             playVideo={playVideo}
             result={result}
             key={result.id.videoId}
+            addToFav={addToFav}
           />;
         })}
       </ul>
@@ -20,7 +21,8 @@ const SearchResults = ({results, playVideo}) => {
 
 SearchResults.propTypes = {
   results: PropTypes.array,
-  playVideo: PropTypes.func
+  playVideo: PropTypes.func,
+  addToFav: PropTypes.func
 };
 
 export default SearchResults;

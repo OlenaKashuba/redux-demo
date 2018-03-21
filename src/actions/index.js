@@ -1,5 +1,5 @@
 export const updateQuery = query => {
-  return {type: 'UPDATE_QUERY', query};
+  return {type: 'UPDATE_QUERY', query: query};
 };
 
 function receiveSearch(results, query) {
@@ -27,3 +27,8 @@ export const searchRequest = query => {
 export const reloadVideo = videoId => {
   return {type: 'UPDATE_VIDEO_ID', videoId};
 };
+
+export const addToFav = result => {
+  return {type: 'ADD_TO_FAV', result: result};
+};
+

@@ -9,11 +9,11 @@ const getId = (state) => {
 
 const mapStateToProps = (state) => ({videoId: getId(state)});
 
-const mapDispatchToProps = dispatch => ({
-	updateId: videoId => dispatch(reloadVideo(videoId))
-});
+// const mapDispatchToProps = dispatch => ({
+// 	updateId: videoId => dispatch(reloadVideo(videoId))
+// });
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+	mapStateToProps
+	// mapDispatchToProps
 )(Player);

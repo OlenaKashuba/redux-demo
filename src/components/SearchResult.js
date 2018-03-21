@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchResult = ({result, playVideo}) => {
+const SearchResult = ({result, addToFav, playVideo}) => {
   const { snippet } = result;
   const { videoId } = result.id;
   const { description, title } = snippet;
@@ -9,15 +9,15 @@ const SearchResult = ({result, playVideo}) => {
   return (
     <li
       className="result-item"
-      onClick={ event => {
-        playVideo(videoId);
-      }}
     >
       <img
         className="result-img"
         src={url}
         height={height}
         width={width}
+        onClick={ event => {
+        playVideo(videoId);
+      }}
       />
       <div className="result-description">
         <div>
@@ -25,13 +25,15 @@ const SearchResult = ({result, playVideo}) => {
         </div>
         {description}
       </div>
+      <button className="btnFav" onClick={ event => {addToFav(result);}}>Add to favourites</button>
     </li>
   );
 };
 
 SearchResult.propTypes = {
   result: PropTypes.object,
-  playVideo: PropTypes.func
+  playVideo: PropTypes.func,
+  addToFav: PropTypes.func
 };
 
 export default SearchResult;
