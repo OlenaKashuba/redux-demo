@@ -7,7 +7,6 @@ const getResults = (state) => {
 };
 
 const mapStateToProps = state => {
-	console.log(state);
 	return {results: getResults(state)};
 };
 

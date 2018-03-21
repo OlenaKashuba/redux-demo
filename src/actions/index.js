@@ -2,6 +2,8 @@ export const updateQuery = query => {
   return {type: 'UPDATE_QUERY', query: query};
 };
 
+
+
 function receiveSearch(results, query) {
   return {
     type:'RECEIVE_SEARCH',
@@ -31,4 +33,3 @@ export const reloadVideo = videoId => {
 export const addToFav = result => {
   return {type: 'ADD_TO_FAV', result: result};
 };
-

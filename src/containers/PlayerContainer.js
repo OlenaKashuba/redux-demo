@@ -3,7 +3,6 @@ import Player from '../components/Player';
 import {reloadVideo} from '../actions';
 
 const getId = (state) => {
-	console.log(state.videoId);
 	return state.videoId;
 };
 

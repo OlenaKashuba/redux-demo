@@ -6,6 +6,7 @@ const SearchResult = ({result, addToFav, playVideo}) => {
   const { videoId } = result.id;
   const { description, title } = snippet;
   const { height, width, url } = result.snippet.thumbnails.default;
+  console.log(result);
   return (
     <li
       className="result-item"
